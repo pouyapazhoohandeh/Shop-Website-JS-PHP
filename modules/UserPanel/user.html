@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/user.css">
+    <title>ورود و عضویت</title>
+</head>
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <!-- <button class="close" onclick="ClosePopup()">&#x2715</button> -->
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button"  class="toogle-btn" onclick="login()">ورود</button>
+                <button type="button" class="toogle-btn" onclick="register()">ثبت نام</button>
+            </div>
+            <form id="login" class="input-group">
+                <input type="text" class="input-field" placeholder="نام کاربری" required>
+                <input type="text" class="input-field" placeholder="رمز عبور" required>
+                <input type="checkbox" class="check-box"><span class="span">مرا به خاطر بسپار</span> 
+                <button type="submit" id="btnlogin" class="submit-btn">ورود</button>
+                <a class="backPG" href="../../index.html">بازگشت به صفحه اصلی</a>
+            </form>
+            <form id="register" class="input-group">
+                <input type="text" id="fullname" class="input-field" placeholder="نام و نام خانوادگی" required>
+                <input type="email" id="email" class="input-field" placeholder="ایمیل" required>
+                <input type="text" id="username" class="input-field" placeholder="نام کاربری" required>
+                <input type="text" id="password" class="input-field" placeholder="رمز عبور" required>
+                <button type="submit" id="btnregister" class="submit-btn">ثبت نام</button>
+            </form>
+        </div>
+    </div>
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/register.js"></script>
+</body>
+</html>
