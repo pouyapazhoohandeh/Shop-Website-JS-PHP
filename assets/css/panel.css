@@ -248,6 +248,113 @@ nav a{
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
 }
+#alPr{
+  direction: rtl;
+  font-family: "IRANSans";
+  margin: 15px;
+}
+.product-form{
+  display: flex;
+  margin: 20px;
+}
+.PR-Form{
+  background-color: #fff;
+  height: auto;
+  width: 100%;
+  border-radius: 20px;
+  padding: 30px 30px 30px 30px;
+  display: flex;
+  border: solid 1px #fd3838;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  font-family: "IRANSans";
+
+}
+.PR-inputs{
+  flex-basis: 75%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.PR-text-input {
+  width: 150px;
+  height: 30px;
+  border-radius: 8px;
+  background-color: #fe8a3936;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.PR-text-input:hover {
+  background-color: #fe8a3959;
+}
+.PR-buttons{
+  display: flex;
+  flex-basis: 25%;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+
+#PR-submit {
+  font-family: "IRANSans";
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  width: 140px;
+  background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+  color: #fff;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+#PR-submit:hover{
+  background-color: #0a8ef2;
+  box-shadow: 0 0 60px 0 #ccc;
+  transition: .4s;
+  transform: scale(1.02)
+}
+
+#PR-reset{
+  font-family: "IRANSans";
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  width: 140px;
+  background-color: #fe8a3929;
+  color: #fd3838;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+#PR-reset:hover{
+  box-shadow: 0 0 60px 0 #ccc;
+  transition: .4s;
+  transform: scale(1.02);
+}
+#ProductName{
+  margin-bottom: 15px;
+}
  footer{
     width: 80%;
     height: 80px;
