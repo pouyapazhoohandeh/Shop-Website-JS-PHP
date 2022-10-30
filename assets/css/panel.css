@@ -270,7 +270,6 @@ nav a{
   flex-direction: column;
   flex-wrap: nowrap;
   font-family: "IRANSans";
-
 }
 .PR-inputs{
   flex-basis: 75%;
@@ -282,7 +281,9 @@ nav a{
   margin-bottom: 20px;
 }
 .PR-text-input {
-  width: 150px;
+  direction: rtl;
+  font-family: "IRANSans";
+  width: 140px;
   height: 30px;
   border-radius: 8px;
   background-color: #fe8a3936;
@@ -354,6 +355,225 @@ nav a{
 }
 #ProductName{
   margin-bottom: 15px;
+}
+.PR-Table{
+  background-color: #fff;
+  height: 155px;
+  margin: 20px;
+  overflow: auto;
+  overflow-x: hidden;
+  border-radius: 20px 5px 5px 20px;
+  padding: 30px 30px 30px 30px;
+  display: flex;
+  border: solid 1px #fd3838;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  font-family: "IRANSans";
+  -webkit-border-radius: 20px 5px 5px 20px;
+  -moz-border-radius: 20px 5px 5px 20px;
+  -ms-border-radius: 20px 5px 5px 20px;
+  -o-border-radius: 20px 5px 5px 20px;
+}
+
+.container{
+  direction: rtl;
+}
+.table-wrapper {
+  background: #fff;
+  /* padding: 20px 25px; */
+  margin: -5px -30px;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-title {        
+padding-bottom: 15px;
+background: #435d7d;
+color: #fff;
+padding: 16px 30px;
+margin: -20px -25px 10px;
+border-radius: 3px 3px 0 0;
+}
+.table-title h2 {
+margin: 5px 0 0;
+font-size: 24px;
+}
+.table-title .btn-group {
+float: right;
+}
+.table-title .btn {
+color: #fff;
+float: right;
+font-size: 13px;
+border: none;
+min-width: 50px;
+border-radius: 2px;
+border: none;
+outline: none !important;
+margin-left: 10px;
+}
+.table-title .btn i {
+float: left;
+font-size: 21px;
+margin-right: 5px;
+}
+.table-title .btn span {
+float: left;
+margin-top: 2px;
+}
+table.table tr th, table.table tr td {
+  border-color: #e9e9e9;
+  padding: 4px 15px;
+  vertical-align: middle;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+table.table tr th:first-child {
+width: 60px;
+}
+table.table tr th:last-child {
+width: 100px;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+background-color: #fe8a3936;
+}
+table.table-striped.table-hover tbody tr:hover {
+background: #f5f5f5;
+}
+table.table th i {
+  font-size: 13px;
+  margin: 0 5px;
+  cursor: pointer;
+}	
+table.table td:last-child i {
+opacity: 0.9;
+font-size: 22px;
+  margin: 0 5px;
+}
+table.table td a {
+font-weight: bold;
+color: #566787;
+display: inline-block;
+text-decoration: none;
+outline: none !important;
+}
+table.table td a:hover {
+color: #2196F3;
+}
+table.table td a.edit {
+  color: #FFC107;
+}
+table.table td a.delete {
+  color: #F44336;
+}
+table.table td i {
+  font-size: 19px;
+}
+table.table .avatar {
+border-radius: 50%;
+vertical-align: middle;
+margin-right: 10px;
+}
+.pagination {
+  float: right;
+  margin: 20px 30px 0 0 ;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.page-item{
+  display: inline;
+}
+.pagination li a {
+  border: none;
+  text-decoration: none;
+  font-size: 13px;
+  min-width: 30px;
+  min-height: 30px;
+  color: #999;
+  margin: 0 2px;
+  line-height: 30px;
+  border-radius: 2px !important;
+  text-align: center;
+  padding: 0 6px;
+}
+.pagination li a:hover {
+  color: #666;
+}	
+.pagination li.active a, .pagination li.active a.page-link {
+  background: #fe8a39;
+  color: #fff;
+}
+.pagination li.active a:hover {        
+  background: #0397d6;
+}
+.pagination li.disabled i {
+  color: #ccc;
+  text-decoration: none;
+}
+.pagination li i {
+  font-size: 16px;
+  padding-top: 6px
+}
+.hint-text {
+  float: left;
+  margin-top: 10px;
+  font-size: 13px;
+}    
+
+
+/* Modal styles */
+.modal .modal-dialog {
+max-width: 400px;
+}
+.modal .modal-header, .modal .modal-body, .modal .modal-footer {
+padding: 20px 30px;
+}
+.modal .modal-content {
+border-radius: 3px;
+}
+.modal .modal-footer {
+background: #ecf0f1;
+border-radius: 0 0 3px 3px;
+}
+.modal .modal-title {
+  display: inline-block;
+}
+.modal .form-control {
+border-radius: 2px;
+box-shadow: none;
+border-color: #dddddd;
+}
+.modal textarea.form-control {
+resize: vertical;
+}
+.modal .btn {
+border-radius: 2px;
+min-width: 100px;
+}	
+.modal form label {
+font-weight: normal;
+}	
+.clearfix{
+  display: flex;
+  justify-content: center;
+}
+legend{
+  border: solid 1px #fd3838;
+  background-color: #fff;
+  padding: 1px 6px;
+  font-size: 12px;
+  border-radius: 15px;
+  position: absolute;
+  z-index: 2;
+  margin-top: -43px;
+}
+.td-btn{
+  display: flex;
+  justify-content: center;
 }
  footer{
     width: 80%;
