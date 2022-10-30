@@ -114,6 +114,7 @@ nav{
   display: flex;
   align-items: center;
   margin-left: 200px;
+  flex-direction: row-reverse;
 }
 nav a{
   margin: 0px 15px 0 15px;
@@ -237,16 +238,19 @@ nav a{
   
 }
  .Left-Side{
-    width: 910px;
-    height: 500px;
-    background-color: var(--Bx-Color);
-    margin-right: 5px;
-    box-shadow: 0px 4px 5px rgb(0 0 0 / 10%);
-    border-radius: 25px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    -ms-border-radius: 25px;
-    -o-border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 910px;
+  height: 500px;
+  background-color: var(--Bx-Color);
+  margin-right: 5px;
+  box-shadow: 0px 4px 5px rgb(0 0 0 / 10%);
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
 }
 #alPr{
   direction: rtl;

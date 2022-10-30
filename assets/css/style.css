@@ -114,6 +114,7 @@
 nav{
   display: flex;
   align-items: center;
+  flex-direction: row-reverse;
 }
 nav a{
   margin: 0px 15px 0 15px;
