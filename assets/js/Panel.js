@@ -21,7 +21,6 @@ $(document).ready(function(){
       alert("salam");
       var ProductName = $("#ProductName").val();
       var ProductCategory = $("#ProductCategory").val();
-
       var ProductPrice = $("#ProductPrice").val();
       var ProductQuantity = $("#ProductQuantity").val();
       var ProductDiscount = $("#ProductDiscount").val();
