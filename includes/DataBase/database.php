@@ -12,6 +12,7 @@ function Connect(){
       $conn = new PDO("mysql:host=$SererName;dbname=$DatabaseName", $Username, $password);
       // set the PDO error mode to exception
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $conn->exec("SET NAMES utf8");
       echo "Connected successfully";
       return $conn;
     } catch(PDOException $e) {

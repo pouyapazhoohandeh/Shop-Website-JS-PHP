@@ -1,5 +1,6 @@
 "user strict";
 
+
 var selectorLogin = document.getElementById("login");
         var selectorRegister = document.getElementById("register");
         var selectorBtn = document.getElementById("btn");

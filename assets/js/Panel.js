@@ -13,3 +13,39 @@ Tabs.forEach((tab,index)=> {
     Tabs[index].classList.add('is-active');
   });
 });
+//Using Ajax For Add Product
+$(document).ready(function(){
+
+  $("#PRsubmit").click(function(event){
+      event.preventDefault();
+      alert("salam");
+      var ProductName = $("#ProductName").val();
+      var ProductCategory = $("#ProductCategory").val();
+
+      var ProductPrice = $("#ProductPrice").val();
+      var ProductQuantity = $("#ProductQuantity").val();
+      var ProductDiscount = $("#ProductDiscount").val();
+      var ProductDesc = $("#ProductDesc").val();
+
+
+      var FormData= {
+        'ProductName': ProductName,
+        'ProductCategory' : ProductCategory,
+        'ProductPrice' : ProductPrice,
+        'ProductQuantity' : ProductQuantity,
+        'ProductDiscount' : ProductDiscount,
+        'ProductDesc' : ProductDesc
+      };
+      console.log(FormData);
+      $.ajax({
+        type : "POST",
+        url : "http://php.test/shop/includes/api/RegisterProduct.php",
+        data : FormData,
+        async : "true",
+        success : function(Result){
+            alert(Result);
+        }
+      });
+
+});
+})

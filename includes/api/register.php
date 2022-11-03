@@ -18,4 +18,4 @@ if (!empty($_POST))
     }
 
 }
-echo json_encode("welcome to Barman Ac");
+echo json_encode("Register User Show!");
