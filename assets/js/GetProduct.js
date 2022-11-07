@@ -4,23 +4,29 @@ const { swal } = require("./swl");
 
 $(document).ready(function(){
     
+    $("#ProductTBL").on('click','#editEmployeeModal',function(){
+        // get the current row
+        var currentRow=$(this).closest("tr"); 
+        var col1=currentRow.find("td:eq(0)").html(); // get current row 1st table cell TD value
+        var data=col1;
+        alert(data);
+        console.log(data);
+   });
+
     $("#editEmployeeModal").click(function(event){
         event.preventDefault();
         var ProductID = $("#ProductID").val();
         
-  
+
         var InfoData= {
           'ProductName': ProductName,
-          'ProductCategory' : ProductCategory,
-          'ProductPrice' : ProductPrice,
-          'ProductQuantity' : ProductQuantity,
-          'ProductDiscount' : ProductDiscount,
           'ProductDesc' : ProductDesc
         };
         $.ajax({
           type : "POST",
           url : "http://php.test/shop/includes/api/RegisterProduct.php",
-          data : FormData,
+          dataType: 'json',
+          data : InfoData,
           async : "true",
           success : function(Result){
             Swal.fire({

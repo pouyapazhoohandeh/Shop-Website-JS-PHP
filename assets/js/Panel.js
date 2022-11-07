@@ -18,7 +18,6 @@ $(document).ready(function(){
 
   $("#PRsubmit").click(function(event){
       event.preventDefault();
-      alert("salam");
       var ProductName = $("#ProductName").val();
       var ProductCategory = $("#ProductCategory").val();
       var ProductPrice = $("#ProductPrice").val();
@@ -26,6 +25,7 @@ $(document).ready(function(){
       var ProductDiscount = $("#ProductDiscount").val();
       var ProductDesc = $("#ProductDesc").val();
 
+      
 
       var FormData= {
         'ProductName': ProductName,
@@ -35,16 +35,21 @@ $(document).ready(function(){
         'ProductDiscount' : ProductDiscount,
         'ProductDesc' : ProductDesc
       };
-      console.log(FormData);
       $.ajax({
         type : "POST",
         url : "http://php.test/shop/includes/api/RegisterProduct.php",
         data : FormData,
         async : "true",
         success : function(Result){
-            alert(Result);
+            // alert(Result);
+            Swal.fire(
+              'محصول با موفقیت ثبت شد!',
+              '',
+              'success'
+            )
         }
+        
       });
-
 });
+
 })
