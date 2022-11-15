@@ -9,10 +9,10 @@ $(".btnupdate").click(function() {
     var ProductCat = $(this).closest("tr")   // Finds the closest row <tr> 
                         .find(".cat")     // Gets a descendent with class="nr"
                         .text();  ;           // Retrieves the text within <td>
-    ##var FormData= {
-    #    'ProductID': ProductID,
-    #    'ProductName' : ProductName,
-    #    'ProductCat' : ProductCat        
+    var FormData= {
+       'ProductID': ProductID,
+      'ProductName' : ProductName,
+        'ProductCat' : ProductCat        
         };
 
         $.ajax({
