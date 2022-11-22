@@ -14,6 +14,9 @@ Tabs.forEach((tab,index)=> {
     Tabs[index].classList.add('is-active');
   });
 });
+function ClearContent(){
+
+}
 //Using Ajax For Add Product
 $(document).ready(function(){
 
@@ -55,7 +58,14 @@ $(document).ready(function(){
       var ProductDiscount = $("#ProductDiscount").val();
       var ProductDesc = $("#ProductDesc").val();
 
-      
+      function ClearContent(){
+        $("#ProductName").val("");
+        $("#ProductCategory").val("");
+        $("#ProductPrice").val("");
+        $("#ProductQuantity").val("");
+        $("#ProductDiscount").val("");
+        $("#ProductDesc").val("");~
+      }
 
       var FormData= {
         'ProductName': ProductName,
@@ -115,6 +125,8 @@ $(document).ready(function(){
                     }
                     
                   });
+                  ClearContent();
+
                 }
       
       
