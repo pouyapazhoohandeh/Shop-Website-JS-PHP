@@ -65,21 +65,59 @@ $(document).ready(function(){
         'ProductDiscount' : ProductDiscount,
         'ProductDesc' : ProductDesc
       };
-      $.ajax({
-        type : "POST",
-        url : "http://php.test/shop/includes/api/RegisterProduct.php",
-        data : FormData,
-        async : "true",
-        success : function(Result){
-            // alert(Result);
+      
+        if(ProductName=="")
+        {
+          Swal.fire(
+            'نام محصصول را وارد کنید!',
+            '',
+            'error');
+          
+        }else if(ProductCategory==""){
+          Swal.fire(
+            'دسته بندی محصصول را وارد کنید!',
+            '',
+            'error');
+        }else if(ProductPrice==""){
+          Swal.fire(
+            ' قیمت محصصول را وارد کنید!',
+            '',
+            'error');
+          }else if(ProductQuantity==""){
             Swal.fire(
-              'محصول با موفقیت ثبت شد!',
+              ' تعداد محصصول را وارد کنید!',
               '',
-              'success'
-            )
-        }
-        
-      });
+              'error');
+            }else if(ProductDiscount==""){
+              Swal.fire(
+                ' تخفیف محصصول را وارد کنید!',
+                '',
+                'error');
+              }else if(ProductDesc==""){
+                Swal.fire(
+                  'توضیحات محصصول را وارد کنید!',
+                  '',
+                  'error');
+                }
+                else{
+                  $.ajax({
+                    type : "POST",
+                    url : "http://php.test/shop/includes/api/RegisterProduct.php",
+                    data : FormData,
+                    async : "true",
+                    success : function(Result){
+                        // alert(Result);
+                        Swal.fire(
+                          'محصول با موفقیت ثبت شد!',
+                          '',
+                          'success'
+                        )
+                    }
+                    
+                  });
+                }
+      
+      
 });
 
 })
