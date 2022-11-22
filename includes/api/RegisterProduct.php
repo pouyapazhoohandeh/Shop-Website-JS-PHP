@@ -10,13 +10,19 @@ if (!empty($_POST))
         $ProductQuantity=$_POST['ProductQuantity'];
         $ProductDiscount=$_POST['ProductDiscount'];
         $ProductDesc=$_POST['ProductDesc'];
-        $sql="INSERT INTO product (Name,Category,Price,Quantity,Discount,Description) VALUES('$ProductName','$ProductCategory','$ProductPrice','$ProductQuantity','$ProductDiscount','$ProductDesc')";
-        $conn=Connect();
-        $conn->exec($sql);
-        echo "Product Successfully added!";
+        if(!empty($ProductName)&& !empty($ProductCategory) && !empty($ProductPrice)&& !empty($ProductQuantity) && !empty($ProductDiscount) && !empty($ProductDesc)){
+            $sql="INSERT INTO product (Name,Category,Price,Quantity,Discount,Description) VALUES('$ProductName','$ProductCategory','$ProductPrice','$ProductQuantity','$ProductDiscount','$ProductDesc')";
+            $conn=Connect();
+            $conn->exec($sql);
+            echo "Product Successfully added!";
+        }
+        else {
+            echo "Fill All Fields";
+        }
     }
     catch(PDOException $e){
         echo "Error!". $e->getMessage(); 
     }
+   
 
 }
