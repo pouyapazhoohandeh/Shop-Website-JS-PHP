@@ -20,8 +20,26 @@ function ClearContent(){
 //Using Ajax For Add Product
 $(document).ready(function(){
 
+  function showData(){
+    $.ajax({
+      url:"http://php.test/shop/includes/api/GetProduct.php",
+      method:"GET",
+      success:function(dataa){
+        console.log(dataa);
+      }
+    })
+  }
+  showData();
+
+
   $("#editEmployeeModal").click(function(event){
 
+    var ProductName = $("#ProductName").val();
+    var ProductCategory = $("#ProductCategory").val();
+    var ProductPrice = $("#ProductPrice").val();
+    var ProductQuantity = $("#ProductQuantity").val();
+    var ProductDiscount = $("#ProductDiscount").val();
+    var ProductDesc = $("#ProductDesc").val();
     event.preventDefault();
       Swal.fire({ 
         buttons: {
@@ -64,7 +82,7 @@ $(document).ready(function(){
         $("#ProductPrice").val("");
         $("#ProductQuantity").val("");
         $("#ProductDiscount").val("");
-        $("#ProductDesc").val("");~
+        $("#ProductDesc").val("");
       }
 
       var FormData= {

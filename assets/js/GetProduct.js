@@ -4,6 +4,7 @@ const { swal } = require("./swl");
 
 $(document).ready(function(){
     
+    
     $("#ProductTBL").on('click','#editEmployeeModal',function(){
         // get the current row
         var currentRow=$(this).closest("tr"); 
@@ -23,8 +24,8 @@ $(document).ready(function(){
           'ProductDesc' : ProductDesc
         };
         $.ajax({
-          type : "POST",
-          url : "http://php.test/shop/includes/api/RegisterProduct.php",
+          type : "get",
+          url : "http://php.test/shop/includes/api/GetProduct.php",
           dataType: 'json',
           data : InfoData,
           async : "true",
