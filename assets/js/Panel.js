@@ -14,9 +14,6 @@ Tabs.forEach((tab,index)=> {
     Tabs[index].classList.add('is-active');
   });
 });
-function ClearContent(){
-
-}
 //Using Ajax For Add Product
 $(document).ready(function(){
 
@@ -85,6 +82,7 @@ $(document).ready(function(){
 
   $("#PRsubmit").click(function(event){
       event.preventDefault();
+      var ProductID = $("#ProductID").val();
       var ProductName = $("#ProductName").val();
       var ProductCategory = $("#ProductCategory").val();
       var ProductPrice = $("#ProductPrice").val();
@@ -92,23 +90,13 @@ $(document).ready(function(){
       var ProductDiscount = $("#ProductDiscount").val();
       var ProductDesc = $("#ProductDesc").val();
 
-      function ClearContent(){
-        $("#ProductName").val("");
-        $("#ProductCategory").val("");
-        $("#ProductPrice").val("");
-        $("#ProductQuantity").val("");
-        $("#ProductDiscount").val("");
-        $("#ProductDesc").val("");
-      }
 
-      var FormData= {
-        'ProductName': ProductName,
-        'ProductCategory' : ProductCategory,
-        'ProductPrice' : ProductPrice,
-        'ProductQuantity' : ProductQuantity,
-        'ProductDiscount' : ProductDiscount,
-        'ProductDesc' : ProductDesc
-      };
+      $("#ProductName").val(ProductName);
+      $("#ProductCategory").val(ProductCategory);
+      $("#ProductPrice").val(ProductPrice);
+      $("#ProductQuantity").val(ProductQuantity);
+      $("#ProductDiscount").val(ProductDiscount);
+      $("#ProductDesc").val(ProductDesc);
       
         if(ProductName=="")
         {
@@ -144,6 +132,15 @@ $(document).ready(function(){
                   'error');
                 }
                 else{
+                  if(ProductID==""){
+                    var FormData= {
+                      'ProductName': ProductName,
+                      'ProductCategory' : ProductCategory,
+                      'ProductPrice' : ProductPrice,
+                      'ProductQuantity' : ProductQuantity,
+                      'ProductDiscount' : ProductDiscount,
+                      'ProductDesc' : ProductDesc
+                    };
                   $.ajax({
                     type : "POST",
                     url : "http://php.test/shop/includes/api/RegisterProduct.php",
@@ -156,14 +153,37 @@ $(document).ready(function(){
                           '',
                           'success'
                         )
+                    }                  
+                  });
+                  ClearContent();
+                }else{
+                  var FormData= {
+                    'ProductID': ProductID,
+                    'ProductName': ProductName,
+                    'ProductCategory' : ProductCategory,
+                    'ProductPrice' : ProductPrice,
+                    'ProductQuantity' : ProductQuantity,
+                    'ProductDiscount' : ProductDiscount,
+                    'ProductDesc' : ProductDesc
+                  };
+                  $.ajax({
+                    type : "POST",
+                    url : "includes/api/UpdateProduct.php",
+                    data : FormData,
+                    async : "true",
+                    success : function(Result){
+                        // alert(Result);
+                        Swal.fire(
+                          'محصول با موفقیت ویرایش شد!',
+                          '',
+                          'success'
+                        )
                     }
                     
                   });
                   ClearContent();
-
-                }
-      
-      
-});
-
+                  }
+                  
+                }   
+    });
 })
