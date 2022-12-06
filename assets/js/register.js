@@ -36,7 +36,7 @@ $(document).ready(function(){
 
       $.ajax({
         type : "POST",
-        url : "http://php.test/shop/includes/api/register.php",
+        url : "includes/api/register.php",
         data : FormData,
         async : "true",
         success : function(Result){

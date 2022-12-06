@@ -19,7 +19,7 @@ $(document).ready(function(){
 
   function showData(){
     $.ajax({
-      url:"http://php.test/shop/includes/api/GetProduct.php",
+      url:"includes/api/GetProduct.php",
       method:"GET",
       success:function(dataa){
         console.log(dataa);

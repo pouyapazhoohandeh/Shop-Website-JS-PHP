@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/panel.css">
     <link rel="stylesheet" href="assets/css/table.css">
     <link rel="stylesheet" href="assets/css/limonteSWAL.css">
+    <script src="assets/js/swl.js"></script>
     <script src="assets/js/font.js"></script>
 
     <title>پنل کاربری</title>
@@ -69,6 +70,7 @@
                         <div class="product-form">
                             <section class="PR-Form">
                                 <div class="PR-inputs">
+                                  <input type="hidden" class="PR-text-input" id="ProductID" autocomplete="off" required/>
                                     <p class="text">نام محصول</p>
                                     <input type="text" class="PR-text-input" id="ProductName" autocomplete="off" required/>
                                     <p class="text">دسته بندی محصول</p><input type="text" class="PR-text-input" id="ProductCategory" autocomplete="on" required>
@@ -262,7 +264,7 @@
     <script src="assets/js/swl.js"></script>
     <script src="assets/js/GetProduct.js"></script>
     <script  src="assets/js/getUpdate.js"></script>
-    <script src="assets/js/Panel.js"></script>
-    <script  src="assets/js/DeleteProduct.js"></script>
+    <script src="assets/js/Panel.js" defer></script>
+    <script  src="assets/js/DeleteProduct.js" defer></script>
 </body>
 </html> 
