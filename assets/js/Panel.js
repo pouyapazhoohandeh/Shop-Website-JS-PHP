@@ -67,6 +67,22 @@ $(document).ready(function(){
         
     })
   });
+  //For reset content
+  function ClearContent(){
+    $("#ProductID").val("");
+    $("#ProductName").val("");
+    $("#ProductCategory").val("");
+    $("#ProductPrice").val("");
+    $("#ProductQuantity").val("");
+    $("#ProductDiscount").val("");
+    $("#ProductDesc").val("");
+  }
+  $('#PR-reset').click(()=>{
+    ClearContent();
+  }
+   
+  );
+
   $("#PRsubmit").click(function(event){
       event.preventDefault();
       var ProductName = $("#ProductName").val();
