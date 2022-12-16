@@ -17,6 +17,8 @@ Tabs.forEach((tab,index)=> {
 //Using Ajax For Add Product
 $(document).ready(function(){
 
+
+  
   function showData(){
     $.ajax({
       url:"includes/api/GetProduct.php",
@@ -153,6 +155,7 @@ $(document).ready(function(){
                           '',
                           'success'
                         )
+
                     }                  
                   });
                   ClearContent();
@@ -173,12 +176,19 @@ $(document).ready(function(){
                     async : "true",
                     success : function(Result){
                         // alert(Result);
+                        
                         Swal.fire(
                           'محصول با موفقیت ویرایش شد!',
                           '',
                           'success'
                         )
                     }
+
+                    
+                      // var UData = $(this).closest("tr")   // Finds the closest row <tr> 
+                      // .find(".id")
+
+                      // $("#ProductID").val(UData);
                     
                   });
                   ClearContent();

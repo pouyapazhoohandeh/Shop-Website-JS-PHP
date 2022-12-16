@@ -7,6 +7,7 @@ $sth->execute();
 /* PDOStatement::FETCH_ASSOC */
 $row = $sth->fetchAll(PDO::FETCH_ASSOC);
 $result=$row;
+
 foreach($result as $data){
     echo '<tr>
             <td class="id">'.$data['id'].'</td>                                       

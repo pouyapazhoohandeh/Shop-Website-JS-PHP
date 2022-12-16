@@ -309,6 +309,7 @@ nav a{
   flex-direction: column;
   flex-wrap: nowrap;
   font-family: "IRANSans";
+  margin: 20px 20px 0 20px;
 }
 .PR-inputs{
   flex-basis: 75%;
@@ -736,6 +737,37 @@ font-weight: normal;
 .clearfix{
   display: flex;
   justify-content: center;
+}
+.Inp-Search{
+  direction: rtl;
+  font-family: "IRANSans";
+  width: 140px;
+  height: 30px;
+  border-radius: 8px;
+  background-color: #fe8a3936;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.SearchBox{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 7px;
+}
+.Inp-Search:hover{
+  background-color:#fe8a3959;
+}
+.btn-Search{
+  font-family: "IRANSans"!important;
+  border: none;
+  width: 70px;
+  height: 30px;
+  background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+  color: #fff;
+  border-radius: 8px;
+}
+#inpSearchBox{
+  margin-left:10px
 }
 legend{
   border: solid 1px #fd3838;

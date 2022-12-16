@@ -362,10 +362,16 @@ main{
 	font-family: IRANSans;
   }
   .blog-slider__code {
-	color: #7b7992;
+	/* color: #7b7992;*/
 	margin-bottom: 15px;
 	display: block;
-	font-weight: 500;
+	/* font-weight: 500; */ 
+	background-color: #fd3838;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 200;
+    width: 110px;
+    color: #fff;
   }
   .blog-slider__title {
 	font-size: 24px;

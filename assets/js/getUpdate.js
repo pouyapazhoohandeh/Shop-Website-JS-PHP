@@ -4,11 +4,11 @@ $("body").on("click",".btnupdate",function() {
     var ProductID = $(this).closest("tr")   // Finds the closest row <tr> 
                        .find(".id")     // Gets a descendent with class="nr"
                        .text(); 
-    var ProductName = $(this).closest("tr")   // Finds the closest row <tr> 
-                        .find(".name")     // Gets a descendent with class="nr"
+    var ProductName = $(this).closest("tr")   
+                        .find(".name")     
                         .text();
-    var ProductCat = $(this).closest("tr")   // Finds the closest row <tr> 
-                        .children(".cat")     // Gets a descendent with class="nr"
+    var ProductCat = $(this).closest("tr")   
+                        .children(".cat")     
                         .text();          // Retrieves the text within <td>
     var ProductPrice = $(this).closest("tr")   // Finds the closest row <tr> 
                         .find(".price")     // Gets a descendent with class="nr"
