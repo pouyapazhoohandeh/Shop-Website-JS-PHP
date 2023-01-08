@@ -1,30 +1,30 @@
-<?php
-
+<?PHP
+require_once "../../database/database.php";
 if (!empty($_POST))
 {
     try{
-        require_once "../DataBase/database.php";
-        $UserId = $_POST['id'];
+        $UserID = $_POST['UserID'];
         $UserFName = $_POST['UserFName'];
         $UserTel = $_POST['UserTel'];
-        $UserMail=$_POST['UserMail'];
-        $Username=$_POST['Username'];
+        $UserEmail=$_POST['UserEmail'];
+        $UserName=$_POST['UserName'];
         $UserPass=$_POST['UserPass'];
-        $Useraddress=$_POST['Useraddress'];
-        $sql="UPDATE users SET FullName='$UserFName',
-                                 Phone='$UserTel',
-                                 Email='$UserMail',
-                                 Username='$Username',
-                                 Password='$UserPass',
-                                 Address='$Useraddress' WHERE id='$UserId' " ;
-        $conn=Connect();
-        $conn->exec($sql);
-        echo "User Successfully Updated!";
+        $UserAddress=$_POST['UserAddress'];
+        $UserType=$_POST['UserType'];
+
+        if(!empty($UserFName)&& !empty($UserTel) && !empty($UserName)&& !empty($UserPass) && !empty($UserAddress)){
+            $sql="update users set FullName='$UserFName',Phone='$UserTel',Email='$UserTel',Username='$UserName',Password='$UserPass',Address='$UserAddress',type='$UserType' where id=$UserID";
+            $conn=Connect();
+            $sth = $conn->prepare($sql);
+            $conn->exec($sql);
+        }
+        else {
+            echo "Fill All Fields";
+        }
     }
     catch(PDOException $e){
-        echo "Error!". $e->getMessage(); 
+        echo "Error!". $e->getMessage();
     }
 
-}
 
-?>
+}
