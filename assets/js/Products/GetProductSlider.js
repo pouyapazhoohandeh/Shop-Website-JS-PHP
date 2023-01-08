@@ -3,7 +3,7 @@
 function loadProduct() { 
   $.ajax({
     type : "get",
-    url : "includes/api/GetProductSlider.php",
+    url : "includes/api/Products/GetProductSlider.php",
     async : "true",
     success : function(Result){
      let ProductData=JSON.parse(Result);

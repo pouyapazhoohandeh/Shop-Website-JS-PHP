@@ -3,10 +3,11 @@
 function loadProduct() { 
   $.ajax({
     type : "get",
-    url : "includes/api/GetProduct2.php",
+    url : "includes/api/Products/GetProductList.php",
     async : "true",
     success : function(Result){
-     let Products=JSON.parse(Result);
+      let Products=JSON.parse(Result);
+      
      for (let [index, element] of Products.entries()) {
                 let Row =`<tr id='${index+1}'>
                 <td>${index+1}</td>

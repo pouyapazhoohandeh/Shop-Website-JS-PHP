@@ -7,7 +7,7 @@ $('body').on('click','.delete',function () {
     .text();
     $.ajax({
         type : "POST",
-        url : "includes/api/DeleteProduct.php",
+        url : "includes/api/Products/DeleteProduct.php",
         data : {'ProductID':ProductID},
         async : "true",
         success : function(Result){

@@ -17,18 +17,37 @@ Tabs.forEach((tab,index)=> {
 //Using Ajax For Add Product
 $(document).ready(function(){
 
-
+  $('#ProductTBL').DataTable({
+    processing:true,
+    ajax:"includes/api/Products/GetProductList.php",
+    "language": {
+        "lengthMenu": "نمایش _MENU_ رکورد هر صفحه",
+        "zeroRecords": "متاسفانه موردی یافت نشد",
+        "info": "صفحه _PAGE_ از _PAGES_",
+        "infoEmpty": "موردی یافت نشد",
+        "infoFiltered": "(فیلتر _MAX_ رکورد)",
+        "search": "جستجو",
+        "loadingRecords": "درحال بارگذاری",
+        "processing": "در حال پردازش",
+        "paginate": {
+            "first": "ابتدا",
+            "last": "انتها",
+            "next": "بعدی",
+            "previous": "قبلی"
+        },
+        "aria": {
+            "sortAscending": ": حالت صعودی فعال",
+            "sortDescending": ": حالت نزولی فعال"
+        }
+    },
+    "pageLength": 5,
+        "columns": [
+      {Result: 'Name'},
+      {Result: 'name'},
+      {Result: 'email'}
+  ]
+});
   
-  function showData(){
-    $.ajax({
-      url:"includes/api/GetProduct.php",
-      method:"GET",
-      success:function(dataa){
-        console.log(dataa);
-      }
-    })
-  }
-  showData();
 
 
   $("#editEmployeeModal").click(function(event){

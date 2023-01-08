@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/panel.css">
     <link rel="stylesheet" href="assets/css/table.css">
+    <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="assets/css/limonteSWAL.css">
     <script src="assets/js/swl.js"></script>
     <script src="assets/js/font.js"></script>
@@ -87,10 +88,10 @@
                         </div>
                         <div class="PR-Table">
                             <legend> <center>لیست محصولات</center> </legend>
-                            <div class="SearchBox">
+                            <!-- <div class="SearchBox">
                               <input type="text" id="inpSearchBox" class="Inp-Search" placeholder="جست و جو ...">
                               <button class="btn-Search"><i class="fa-regular fa-pen-to-square" data-toggle="tooltip" title="Edit">جست و جو</i></button>
-                            </div>
+                            </div> -->
                             <!--Start Table-->
                             <div class="container">
                                 <div class="table-wrapper">
@@ -109,7 +110,7 @@
                                         <th>عملیات</th>
                                       </tr>
                                     </thead>
-                                    <tbody class="ProductList">                                                                                                                                                                                                
+                                    <tbody class="ProductList" id="ProductListdata">                                                                                                                                                                                                
                                     </tbody>
                                   </table>
                                   <div class="clearfix">
@@ -133,12 +134,13 @@
                       <div class="User-Form">
                         <legend> <center>اضافه کردن کاربر جدید</center> </legend>
                         <div class="PR-inputs">
-                          <p class="text">نام و نام خانوادگی</p><input type="text" class="User-text-input" id="UserName" autocomplete="off" required>
-                          <p class="text">تلفن</p><input type="text" class="User-text-input" id="UserCategory" autocomplete="on" required>
-                          <p class="text">ایمیل</p><input type="text" class="User-text-input" id="UserPrice" autocomplete="off" required> 
-                          <p class="text">نام کاربری</p><input type="text" class="User-text-input" id="UserQuantity" autocomplete="on" required>
-                          <p class="text">رمز عبور</p><input type="text" class="User-text-input" id=",UserQuantity" autocomplete="on" required>
-                          <p class="text" id="PD-L"> آدرس</p><input type="text" class="User-text-input" id="UserDesc" autocomplete="off" required>
+                          <input type="hidden" class="PR-text-input" id="UserID" autocomplete="off"/>
+                          <p class="text">نام و نام خانوادگی</p><input type="text" class="User-text-input" id="UserFName" autocomplete="off" required>
+                          <p class="text">تلفن</p><input type="text" class="User-text-input" id="UserTel" autocomplete="on" required>
+                          <p class="text">ایمیل</p><input type="text" class="User-text-input" id="UserEmail" autocomplete="off" required> 
+                          <p class="text">نام کاربری</p><input type="text" class="User-text-input" id="UserName" autocomplete="on" required>
+                          <p class="text">رمز عبور</p><input type="text" class="User-text-input" id="UserPass" autocomplete="on" required>
+                          <p class="text" id="PD-L"> آدرس</p><input type="text" class="User-text-input" id="UserAddress" autocomplete="off" required>
                           <div class="sbf">
                             <p class="text" id="PD-L"> نوع کاربری</p>
                             <select class="User-text-input" name="" id="user-type-selector">
@@ -224,10 +226,14 @@
         </footer>
     </div>
     <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
     <script src="assets/js/swl.js"></script>
-    <script src="assets/js/GetProduct2.js"></script>
-    <script  src="assets/js/getUpdate.js"></script>
+    <script src="assets/js/Products/GetProductList.js"></script>
+    <script  src="assets/js/Products/UpdateProduct.js"></script>
     <script src="assets/js/Panel.js" defer></script>
-    <script  src="assets/js/DeleteProduct.js" defer></script>
+    <script  src="assets/js/Products/DeleteProduct.js" defer></script>
+    <script  src="assets/js/Users/GetUserList.js" defer></script>
+    <script  src="assets/js/Users/RegisterUser.js" defer></script>
+    <script  src="assets/js/Users/UpdateUser.js" defer></script>
 </body>
 </html> 

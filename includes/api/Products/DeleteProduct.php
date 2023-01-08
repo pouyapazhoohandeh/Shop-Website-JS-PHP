@@ -1,6 +1,6 @@
 <?php
  try{
-    require_once "../DataBase/database.php";
+    require_once "../../DataBase/database.php";
     $ProductID = $_POST['ProductID'];
     $sql="DELETE FROM product WHERE id='$ProductID'";
     $conn=Connect();

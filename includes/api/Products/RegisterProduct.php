@@ -3,7 +3,7 @@
 if (!empty($_POST))
 {
     try{
-        require_once "../DataBase/database.php";
+        require_once "../../DataBase/database.php";
         $ProductName = $_POST['ProductName'];
         $ProductCategory = $_POST['ProductCategory'];
         $ProductPrice=$_POST['ProductPrice'];
