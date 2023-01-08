@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/panel.css">
     <link rel="stylesheet" href="assets/css/table.css">
-    <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="assets/css/limonteSWAL.css">
     <script src="assets/js/swl.js"></script>
     <script src="assets/js/font.js"></script>
@@ -21,12 +22,13 @@
                 <img src="assets/images/Logo.svg" alt="Logo">
             </div>
             <nav >
-                <a href="">صفحه اصلی</a>
-                <a href="">جست و جو کالا</a>
-                <a href="">کالا ها</a>
+                <a href="panel.html">داشبورد</a>
+                <a href="index.html">صفحه اصلی</a>
+                <a href="SearchProduct.html">جست و جو کالا</a>
+                <a href="Product.html">کالاها</a>
             </nav>
             <div class="buttons">
-              <a href="../shop/user.html">
+              <a href="user.html">
                 <button class="btn-panel">پنل کاربری</button>
               </a>
             </div>
@@ -41,7 +43,7 @@
                         <span class="Tabs-Name">خانه <i class="fa-solid fa-house-user"></i> </span>
                     </div>
                     <div class="Tabs-Toggle ">
-                        <span class="Tabs-Name">کالا ها   <i class="fa-solid fa-rectangle-list"></i> </span>
+                        <span class="Tabs-Name">کالاها   <i class="fa-solid fa-rectangle-list"></i> </span>
                     </div>
             
                     <div class="Tabs-Toggle">
@@ -62,7 +64,7 @@
                     <div class="Tabs-Content is-active">
       
                         <div class="wel-box">
-                          <h4 class="wel-text">به پنل کاربری خود خوش آمدید <span class="wel-text-name">پویا</span> عزیز</h4>
+                          <h4 class="wel-text">به پنل کاربری خوش آمدید <span id="user-login" class="wel-text-name"></span> عزیز</h4>
                         </div>
                         
                     </div>
@@ -70,58 +72,80 @@
                     <div class="Tabs-Content">
                         <div class="product-form">
                             <section class="PR-Form">
-                                <div class="PR-inputs">
-                                  <input type="hidden" class="PR-text-input" id="ProductID" autocomplete="off" required/>
-                                    <p class="text">نام محصول</p>
-                                    <input type="text" class="PR-text-input" id="ProductName" autocomplete="off" required/>
-                                    <p class="text">دسته بندی محصول</p><input type="text" class="PR-text-input" id="ProductCategory" autocomplete="on" required>
-                                    <p class="text">قیمت محصول</p><input type="text" class="PR-text-input" id="ProductPrice" autocomplete="off" required>
-                                    <p class="text">تعداد محصول</p><input type="text" class="PR-text-input" id="ProductQuantity" autocomplete="on" required>
-                                    <p class="text">میزان تخفیف</p><input type="text" class="PR-text-input" id="ProductDiscount" autocomplete="on" required>
-                                    <p class="text" id="D-L">توضیحات محصول</p><input type="text" class="PR-text-input" id="ProductDesc" autocomplete="off" required>
+                                <div class="container">
+                                    <div class="row text-right">
+                                        <input type="hidden" class="PR-text-input" id="ProductID" autocomplete="off" required/>
+                                        <div class="col-lg-3">
+                                            <p class="text">نام محصول</p>
+                                            <input type="text" class="PR-text-input" id="ProductName" autocomplete="off" required/>
+                                        </div>
+
+                                        <div class="col-lg-3">
+                                            <p class="text">دسته بندی محصول</p>
+                                            <input type="text" class="PR-text-input" id="ProductCategory" autocomplete="on" required>
+                                        </div>
+
+                                        <div class="col-lg-3">
+                                            <p class="text">قیمت محصول</p>
+                                            <input type="text" class="PR-text-input" id="ProductPrice" autocomplete="off" required>
+                                        </div>
+
+                                        <div class="col-lg-3">
+                                            <p class="text">تعداد محصول</p>
+                                            <input type="text" class="PR-text-input" id="ProductQuantity" autocomplete="on" required>
+                                        </div>
+
+                                        <div class="col-lg-3">
+                                            <p class="text">میزان تخفیف</p>
+                                            <input type="text" class="PR-text-input" id="ProductDiscount" autocomplete="on" required>
+                                        </div>
+
+                                        <div class="col-lg-9">
+                                            <p class="text" id="D-L">توضیحات محصول</p>
+                                            <input type="text" style="width: 100%" class="PR-text-input" id="ProductDesc" autocomplete="off" required>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="PR-buttons mt-3">
+                                                <button type="reset" onclick="PR_Reset()" id="PR-reset">بازنشانی</button>
+                                                <button type="button" onclick="PR_Submit()" id="PR-submit" >ثبت</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                 </div>
-                                <div class="PR-buttons">
-                                    <button type="button"  id="PRsubmit" >ثبت</button>
-                                    <button type="reset" id="PR-reset">بازنشانی</button>
-                                </div>
+
+
                             </section>
                         </div>
                         <div class="PR-Table">
-                            <legend> <center>لیست محصولات</center> </legend>
-                            <!-- <div class="SearchBox">
-                              <input type="text" id="inpSearchBox" class="Inp-Search" placeholder="جست و جو ...">
-                              <button class="btn-Search"><i class="fa-regular fa-pen-to-square" data-toggle="tooltip" title="Edit">جست و جو</i></button>
-                            </div> -->
+                            <legend style="width: 200px"> <center>لیست محصولات</center> </legend>
+
                             <!--Start Table-->
                             <div class="container">
                                 <div class="table-wrapper">
                           
-                                  <table class="table table-striped table-hover" id="ProductTBL">
+                                  <table class="table table-striped table-hover text-right" id="ProductTBL">
                                     <thead>
                                       <tr>
                                         <th style="display: none ;">کد</th>
                                         <th>ردیف</th>
-                                        <th>نام محصول</th>
-                                        <th>دسته بندی محصول</th>
-                                        <th>قیمت محصول</th>
-                                        <th>تعداد محصول</th>
-                                        <th>میزان تخفیف</th>
+                                        <th>نام</th>
+                                        <th>دسته بندی</th>
+                                        <th>قیمت</th>
+                                        <th>تعداد</th>
+                                        <th>تخفیف</th>
                                         <th>توضیحات</th>
                                         <th>عملیات</th>
                                       </tr>
                                     </thead>
-                                    <tbody class="ProductList" id="ProductListdata">                                                                                                                                                                                                
+                                    <tbody class="ProductList text-right" id="ProductListdata">
                                     </tbody>
                                   </table>
                                   <div class="clearfix">
-                                    <ul class="pagination">
-                                      <li class="page-item disabled"><a href="#">قبلی</a></li>
-                                      <li class="page-item"><a href="#" class="page-link">1</a></li>
-                                      <li class="page-item"><a href="#" class="page-link">2</a></li>
-                                      <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                                      <li class="page-item"><a href="#" class="page-link">4</a></li>
-                                      <li class="page-item"><a href="#" class="page-link">5</a></li>
-                                      <li class="page-item"><a href="#" class="page-link">بعدی</a></li>
+                                    <ul class="pagination" id="pagination-product">
+
                                     </ul>
                                   </div>
                                 </div>
@@ -132,92 +156,107 @@
         
                     <div class="Tabs-Content">
                       <div class="User-Form">
-                        <legend> <center>اضافه کردن کاربر جدید</center> </legend>
+                        <legend style="width: 150px"> <center>اضافه کردن کاربر جدید</center> </legend>
                         <div class="PR-inputs">
-                          <input type="hidden" class="PR-text-input" id="UserID" autocomplete="off"/>
-                          <p class="text">نام و نام خانوادگی</p><input type="text" class="User-text-input" id="UserFName" autocomplete="off" required>
-                          <p class="text">تلفن</p><input type="text" class="User-text-input" id="UserTel" autocomplete="on" required>
-                          <p class="text">ایمیل</p><input type="text" class="User-text-input" id="UserEmail" autocomplete="off" required> 
-                          <p class="text">نام کاربری</p><input type="text" class="User-text-input" id="UserName" autocomplete="on" required>
-                          <p class="text">رمز عبور</p><input type="text" class="User-text-input" id="UserPass" autocomplete="on" required>
-                          <p class="text" id="PD-L"> آدرس</p><input type="text" class="User-text-input" id="UserAddress" autocomplete="off" required>
-                          <div class="sbf">
-                            <p class="text" id="PD-L"> نوع کاربری</p>
-                            <select class="User-text-input" name="" id="user-type-selector">
-                              <option value="user">کاربر </option>
-                              <option value="admin">مدیر</option>
-                            </select>
-                          </div>
-                          <button type="button"  id="User-submit">ثبت</button>
-                          <button type="reset" id="User-reset" onclick="ResetContent()">بازنشانی</button>
-                      </div>
-                      </div>
-                      <div class="User-Table">
-                        <legend> <center>لیست کاربران</center> </legend>
-                          <!--Start Table-->
-                          <div class="container">
-                              <div class="table-wrapper">
-                                <table class="table table-striped table-hover">
-                                  <thead>
-                                    <tr>
-                                      <th>ردیف</th>
-                                      <th>نام و نام خانوادگی</th>
-                                      <th>تلفن</th>
-                                      <th>ایمیل</th>
-                                      <th>نام کاربری</th>
-                                      <th>آدرس</th>
-                                      <th>کاربری</th>
-                                      <th>عملیات</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>1</td>
-                                      <td>پویا پژوهنده</td>
-                                      <td>09023210600</td>
-                                      <td>info@gmail.com</td>
-                                      <td>pouyapzh</td>
-                                      <td>تست</td>
-                                      <td>مدیر</td>
-                                      <td class="td-btn">
-                                          <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="fa-regular fa-pen-to-square" data-toggle="tooltip" title="Edit"></i></a>
-                                          <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fa-regular fa-trash-can" data-toggle="tooltip" title="Delete"></i></a>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td>1</td>
-                                      <td>علی رضایی</td>
-                                      <td>091312121212</td>
-                                      <td>info@gmail.com</td>
-                                      <td>alirezaie</td>
-                                      <td>تست</td>
-                                      <td>کاربر</td>
-                                      <td class="td-btn">
-                                          <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="fa-regular fa-pen-to-square" data-toggle="tooltip" title="Edit"></i></a>
-                                          <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fa-regular fa-trash-can" data-toggle="tooltip" title="Delete"></i></a>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                                <div class="clearfix">
-                                  <ul class="pagination">
-                                    <li class="page-item disabled"><a href="#">قبلی</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">4</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">بعدی</a></li>
-                                  </ul>
+                            <div class="container">
+                                <div class="row text-right">
+                                    <input type="hidden" class="PR-text-input" id="UserID" autocomplete="off" required/>
+                                    <div class="col-lg-3">
+                                        <p class="text">نام و نام خانوادگی</p>
+                                        <input type="text" class="PR-text-input" id="UserFName" autocomplete="off" required/>
+                                    </div>
+
+                                    <div class="col-lg-3">
+                                        <p class="text">تلفن</p>
+                                        <input type="text" class="PR-text-input" id="UserTel" autocomplete="on" required>
+                                    </div>
+
+                                    <div class="col-lg-3">
+                                        <p class="text">ایمیل</p>
+                                        <input type="text" class="PR-text-input" id="UserEmail" autocomplete="off" required>
+                                    </div>
+
+
+                                    <div class="col-lg-3">
+                                        <p class="text">نام کاربری</p>
+                                        <input type="text" class="PR-text-input" id="UserName" autocomplete="on" required>
+                                    </div>
+
+                                    <div class="col-lg-3">
+                                        <p class="text">رمز عبور</p>
+                                        <input type="text" style="width: 100%" class="PR-text-input" id="UserPass" autocomplete="off" required>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <p class="text">نشانی</p>
+                                        <input type="text" style="width: 100%" class="PR-text-input" id="UserAddress" autocomplete="off" required>
+                                    </div>
+
+                                    <div class="col-lg-3">
+                                        <p class="text">سمت </p>
+                                        <select class="User-text-input" name="" id="user-type-selector">
+                                            <option value="user">کاربر </option>
+                                            <option value="admin">مدیر</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="PR-buttons mt-3">
+                                            <button type="reset" onclick="US_Reset()" id="User-reset">بازنشانی</button>
+                                            <button type="button" onclick="US_Submit()" id="User-submit" >ثبت</button>
+                                        </div>
+                                    </div>
+
                                 </div>
-                              </div>
+
                             </div>
+                        </div>
+                      </div>
+                      <div class="UT-Header">
+                        <div class="User-Table">
+                          <legend style="width: 150px"> <center>لیست کاربران</center> </legend>
+                            <!--Start Table-->
+                            <table class="table table-striped table-hover text-right" style="direction: rtl" id="UserTBL">
+                                <thead>
+                                <tr>
+                                    <th style="display: none ;">کد</th>
+                                    <th>ردیف</th>
+                                    <th>نام</th>
+                                    <th>تلفن</th>
+                                    <th>ایمیل</th>
+                                    <th>یوزرنیم</th>
+                                    <th>پسورد</th>
+                                    <th>نشانی</th>
+                                    <th>سمت</th>
+                                    <th>عملیات</th>
+                                </tr>
+                                </thead>
+                                <tbody class="UserList text-right" id="UserListdata">
+                                </tbody>
+                            </table>
+                            <div class="clearfix">
+                                <ul class="pagination" id="pagination-user">
+  
+                                </ul>
+                            </div>
+                        </div>
+                      </div>
+                      
                           <!--End Table-->
                       </div>
                     </div>
                     <div class="Tabs-Content">
                         <h1 class="Tabs-Title">Coming Soon...</h1>
                     </div>
+
+                <div class="Tabs-Content">
+                    <h1 class="Tabs-Title">
+                        آیا مطمئنید می خواهید از پنل خارج شوید؟
+
+                    </h1>
+
+                    <a href="index.html">بله مطمئنم</a>
+                </div>
                 </div>  
             </div>
         </section>
@@ -226,14 +265,53 @@
         </footer>
     </div>
     <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/jquery.dataTables.min.js"></script>
     <script src="assets/js/swl.js"></script>
-    <script src="assets/js/Products/GetProductList.js"></script>
-    <script  src="assets/js/Products/UpdateProduct.js"></script>
-    <script src="assets/js/Panel.js" defer></script>
-    <script  src="assets/js/Products/DeleteProduct.js" defer></script>
-    <script  src="assets/js/Users/GetUserList.js" defer></script>
-    <script  src="assets/js/Users/RegisterUser.js" defer></script>
-    <script  src="assets/js/Users/UpdateUser.js" defer></script>
+    <script src="assets/js/panel.js"></script>
+
+    <script>
+        $(document).ready(function ()
+        {
+            loadProduct();
+            loadUsers();
+
+            $.ajax({
+                type: "GET",
+                url: "includes/api/users/GetUserLogin.php",
+                async: "true",
+                success: function (Result)
+                {
+                    $("#user-login").text(Result);
+                }
+            });
+
+            $.ajax({
+                type: "GET",
+                url: "includes/api/products/Pagination.php",
+                async: "true",
+                success: function (Result)
+                {
+                    for(var i=1;i<=Result;i++)
+                    {
+                        $("#pagination-product").append('<li ><button onclick="loadProduct('+i+')" class="btn btn-warning" style="margin-left: 5px;width: 50px">'+i+'</button></li>');
+                    }
+                }
+            });
+
+
+            $.ajax({
+                type: "GET",
+                url: "includes/api/users/Pagination.php",
+                async: "true",
+                success: function (Result)
+                {
+                        for(var i=1;i<=Result;i++)
+                        {
+                          $("#pagination-user").append('<li ><button onclick="loadUsers('+i+')" class="btn btn-warning" style="margin-left: 5px;width: 50px">'+i+'</button></li>');
+                        }
+                }
+            });
+        })
+    </script>
+
 </body>
 </html> 

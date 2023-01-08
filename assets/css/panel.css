@@ -89,6 +89,10 @@
     align-content: center;
     align-items: center;
   }
+  a{
+    font-family: IRANSans;
+    text-decoration: none;
+  }
   header{
     width: 80%;
     height: 80px;
@@ -120,6 +124,7 @@ nav a{
   margin: 0px 15px 0 15px;
   text-decoration: none;
   font-family: IRANSans;
+  color : #fd3838 ;
 }
 .buttons{
   display: flex;
@@ -324,7 +329,7 @@ nav a{
   direction: rtl;
   font-family: "IRANSans";
   width: 140px;
-  height: 30px;
+  height: 40px;
   border-radius: 8px;
   background-color: #fe8a3936;
   border: none;
@@ -348,7 +353,7 @@ nav a{
 }
 
 
-#PRsubmit {
+#PR-submit {
   font-family: "IRANSans";
   border: none;
   border-radius: 8px;
@@ -434,7 +439,7 @@ nav a{
   flex-direction: column;
   flex-wrap: nowrap;
   font-family: "IRANSans";
-  margin: 0 20px;
+  margin: 20px 20px;
 }
 .User-inputs{
   flex-basis: 75%;
@@ -479,7 +484,7 @@ nav a{
   align-items: center;
 }
 #user-type-selector{
-  width: 190px;
+  width: 140px;
   margin-right: 14px;
   height: 40px;
 }
@@ -603,6 +608,7 @@ table.table tr th, table.table tr td {
   border-color: #e9e9e9;
   padding: 4px 15px;
   vertical-align: middle;
+  display: revert;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -659,7 +665,7 @@ margin-right: 10px;
   float: right;
   margin: 20px 30px 0 0 ;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 .page-item{
   display: inline;
@@ -797,5 +803,12 @@ legend{
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
     font-family: IRANSans;
-    margin: 15px 15px;
+    margin: 15px 155px;
+}
+.btn-warning{
+  background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+  color: #fff;
+}
+#UserTBL{
+  /* margin: 0 120px; */
 }

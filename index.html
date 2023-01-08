@@ -9,72 +9,46 @@
     <title>Shop Page</title>
 </head>
 <body>
-    <div class="Conteiner">
-        <header class="header">
-            <div class="logo">
-                <img src="assets/images/Logo.svg" alt="Logo">
-            </div>
-            <nav >
-                <a href="">صفحه اصلی</a>
-                <a href="">جست و جو کالا</a>
-                <a href="">کالا ها</a>
-            </nav>
-            <div class="buttons">
-              <a href="../shop/user.html">
+<div class="Conteiner">
+    <header class="header">
+        <div class="logo">
+            <img src="assets/images/Logo.svg" alt="Logo">
+        </div>
+        <nav >
+            <a href="index.html">صفحه اصلی</a>
+            <a href="search.html">جست و جو کالا</a>
+            <a href="products.html">کالا ها</a>
+        </nav>
+        <div class="buttons">
+            <a href="user.html">
                 <button class="btn-panel">پنل کاربری</button>
-              </a>
+            </a>
+        </div>
+    </header>
+    <main class="main">
+        <section class="Bx-Pr">
+            <div id="swiper-wrap" class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;">
+
+
             </div>
-        </header>
-        <main class="main">
-            <section class="Bx-Pr">
-                <div class="blog-slider__wrp swiper-wrapper">
-                  <div class="blog-slider__item swiper-slide">
-                    <div class="blog-slider__img">
-                      
-                      <img src="assets/images/img1.webp" alt="">
-                    </div>
-                    <div class="blog-slider__content">
-                      <span class="blog-slider__code">نمایش تاریخ روز</span>
-                      <div class="blog-slider__title">نمایش نام کالا</div>
-                      <div class="blog-slider__text">نمایش توضیحات محصول و جزئیات آن</div>
-                      <a href="#" class="blog-slider__button">نمایش : قیمت</a>
-                    </div>
-                  </div>
-                  <div class="blog-slider__item swiper-slide">
-                    <div class="blog-slider__img">
-                      <img src="assets/images/img2.webp" alt="">
-                    </div>
-                    <div class="blog-slider__content">
-                      <span class="blog-slider__code">نمایش تاریخ روز</span>
-                      <div class="blog-slider__title">نمایش نام کالا</div>
-                      <div class="blog-slider__text">نمایش توضیحات محصول و جزئیات آن</div>
-                      <a href="#" class="blog-slider__button">نمایش : قیمت</a>
-                    </div>
-                  </div>
-                  
-                  <div class="blog-slider__item swiper-slide">
-                    <div class="blog-slider__img">
-                      <img src="assets/images/img3.webp" alt="">
-                    </div>
-                    <div class="blog-slider__content">
-                      <span class="blog-slider__code">نمایش تاریخ روز</span>
-                      <div class="blog-slider__title">نمایش نام کالا</div>
-                      <div class="blog-slider__text">نمایش توضیحات محصول و جزئیات آن</div>
-                      <a href="#" class="blog-slider__button">نمایش : قیمت</a>
-                    </div>
-                  </div>
-                  
-                </div>
-                <div class="blog-slider__pagination"></div>
-            </section>
-        </main>
-        <footer class="Footer">
-            <p>طراحی و توسعه توسط پویا پژوهنده ©</p>
-        </footer>
-    </div>
+            <div class="blog-slider__pagination"></div>
+        </section>
+    </main>
+    <footer class="Footer">
+        <p>طراحی و توسعه توسط پویا پژوهنده ©</p>
+    </footer>
+</div>
 </body>
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/swipper.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/home.js"></script>
 <!-- <script src="assets/js/GetProductSlider.js"></script> -->
+<script>
+    $(document).ready(function ()
+    {
+        loadProduct();
+    });
+</script>
+
 </html>

@@ -5,36 +5,121 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="assets/css/limonteSWAL.css">
+    <script src="assets/js/swl.js"></script>
+    <script src="assets/js/font.js"></script>
     <title>ورود و عضویت</title>
 </head>
 <body>
-    <div class="hero">
-        <div class="form-box">
-            <!-- <button class="close" onclick="ClosePopup()">&#x2715</button> -->
-            <div class="button-box">
-                <div id="btn"></div>
-                <button type="button"  class="toogle-btn" onclick="login()">ورود</button>
-                <button type="button" class="toogle-btn" onclick="register()">ثبت نام</button>
-            </div>
-            <form id="login" class="input-group">
-                <input type="text" class="input-field" placeholder="نام کاربری" required>
-                <input type="text" class="input-field" placeholder="رمز عبور" required>
-                <input type="checkbox" class="check-box"><span class="span">مرا به خاطر بسپار</span> 
-                <button type="submit" id="btnlogin" class="submit-btn">ورود</button>
-                <br>
-                <a class="backPG" href="index.html">بازگشت به صفحه اصلی</a>
-            </form>
-            <form id="register" class="input-group">
-                <input type="text" id="fullname" class="input-field" placeholder="نام و نام خانوادگی" required>
-                <input type="email" id="email" class="input-field" placeholder="ایمیل" required>
-                <input type="text" id="username" class="input-field" placeholder="نام کاربری" required>
-                <input type="text" id="password" class="input-field" placeholder="رمز عبور" required>
-                <br>
-                <button type="submit" id="btnregister" class="submit-btn">ثبت نام</button>
-            </form>
+<div class="hero">
+    <div class="form-box">
+        <!-- <button class="close" onclick="ClosePopup()">&#x2715</button> -->
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button"  class="toogle-btn" onclick="login()">ورود</button>
+            <button type="button" class="toogle-btn" onclick="register()">ثبت نام</button>
         </div>
+        <form id="login" style="top: 100px" class="input-group">
+            <input type="text" class="input-field" id="User" placeholder="نام کاربری" required>
+            <input type="password" class="input-field" id="Pass" placeholder="رمز عبور" required>
+            <input type="checkbox" class="check-box"><span class="span">مرا به خاطر بسپار</span>
+            <div id="btnlogin" class="submit-btn">ورود</div>
+            <br>
+            <a class="backPG" href="index.html">بازگشت به صفحه اصلی</a>
+        </form>
+
+        <form id="register" style="top: 100px" class="input-group">
+            <input type="text" id="fullname" class="input-field" placeholder="نام و نام خانوادگی" required>
+            <input type="text" id="tel" class="input-field" placeholder="تلفن" required>
+            <input type="email" id="email" class="input-field" placeholder="ایمیل">
+            <input type="text" id="username" class="input-field" placeholder="نام کاربری" required>
+            <input type="password" id="password" class="input-field" placeholder="رمز عبور" required>
+            <br>
+            <div id="btnregister" class="submit-btn">ثبت نام</div>
+        </form>
     </div>
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/register.js"></script>
+</div>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/swl.js"></script>
+<script src="assets/js/register.js"></script>
+<script>
+    $(document).ready(function(){
+
+        $("#btnregister").click(function ()
+        {
+            var UserFName = $("#fullname").val();
+            var UserTel = $("#tel").val();
+            var UserEmail = $("#email").val();
+            var UserName = $("#username").val();
+            var UserPass = $("#password").val();
+            var UserType = "user";
+
+                var FormData = {
+                    'UserFName': UserFName,
+                    'UserTel': UserTel,
+                    'UserEmail': UserEmail,
+                    'UserName': UserName,
+                    'UserPass': UserPass,
+                    'UserAddress': '',
+                    'UserType': UserType,
+                };
+                $.ajax({
+                    type: "POST",
+                    url: "includes/api/users/RegisterUser.php",
+                    data: FormData,
+                    async: "true",
+                    success: function (Result)
+                    {
+                        //alert(Result);
+                        Swal.fire(
+                            'کاربر با موفقیت ثبت شد!',
+                            '',
+                            'success'
+                        )
+                    }
+                });
+
+
+        });
+
+        $("#btnlogin").click(function ()
+        {
+
+            var UserName = $("#User").val();
+            var UserPass = $("#Pass").val();
+
+            var FormData = {
+                'UserName': UserName,
+                'UserPass': UserPass,
+            };
+            $.ajax({
+                type: "POST",
+                url: "includes/api/users/LoginUser.php",
+                data: FormData,
+                async: "true",
+                success: function (Result)
+                {
+                    if(Result==1)
+                    {
+                        window.location.href = 'panel.html';
+                    }
+                    else
+                    {
+                        Swal.fire(
+                            'نام کاربری یا رمز عبور اشتباه است!',
+                            '',
+                            'danger'
+                        )
+                    }
+                }
+            });
+
+
+        });
+
+
+    })
+
+</script>
 </body>
 </html>

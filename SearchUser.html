@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/panel.css">
+    <link rel="stylesheet" href="assets/css/table.css">
+    <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="assets/css/limonteSWAL.css">
+    <script src="assets/js/swl.js"></script>
+    <script src="assets/js/font.js"></script>
+
+    <title>پنل کاربری</title>
+</head>
+<body>
+    <div class="Conteiner">
+        <header class="header">
+            <div class="logo">
+                <img src="assets/images/Logo.svg" alt="Logo">
+            </div>
+            <nav >
+                <a href="panel.html">داشبورد</a>
+                <a href="index.html">صفحه اصلی</a>
+                <a href="SearchProduct.html">جست و جو کالا</a>
+                <a href="Product.html">کالاها</a>
+            </nav>
+            <div class="buttons">
+              <a href="user.html">
+                <button class="btn-panel">پنل کاربری</button>
+              </a>
+            </div>
+        </header>
+        <section class="User-Panel">
+            <div class="Left-Side" style="height: 800px !important;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="product-form" style="margin-top: -40px !important;">
+                                <section class="PR-Form">
+                                    <div class="container">
+                                        <div class="row text-right">
+                                            <input type="hidden" class="PR-text-input" id="ProductID" autocomplete="off" required/>
+                                            <div class="col-lg-3">
+                                                <p class="text">نام محصول</p>
+                                                <input type="text" class="PR-text-input" id="ProductName" autocomplete="off" required/>
+                                            </div>
+
+                                            <div class="col-lg-3">
+                                                <p class="text">دسته بندی محصول</p>
+                                                <input type="text" class="PR-text-input" id="ProductCategory" autocomplete="on" required>
+                                            </div>
+
+                                            <div class="col-lg-3">
+                                                <p class="text">قیمت محصول</p>
+                                                <input type="text" class="PR-text-input" id="ProductPrice" autocomplete="off" required>
+                                            </div>
+
+                                            <div class="col-lg-3">
+                                                <p class="text">تعداد محصول</p>
+                                                <input type="text" class="PR-text-input" id="ProductQuantity" autocomplete="on" required>
+                                            </div>
+
+                                            <div class="col-lg-3">
+                                                <p class="text">میزان تخفیف</p>
+                                                <input type="text" class="PR-text-input" id="ProductDiscount" autocomplete="on" required>
+                                            </div>
+
+                                            <div class="col-lg-9">
+                                                <p class="text" id="D-L">توضیحات محصول</p>
+                                                <input type="text" style="width: 100%" class="PR-text-input" id="ProductDesc" autocomplete="off" required>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="PR-buttons mt-3">
+                                                    <button type="reset" onclick="PR_Reset()" id="PR-reset">بازنشانی</button>
+                                                    <button type="button" onclick="PR_Submit()" id="PR-submit" >ثبت</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="product-form" style="margin-top: -20px !important;">
+                                <section class="PR-Form">
+                                    <div class="container">
+                                        <div class="row text-right">
+                                            <div class="col-lg-12">
+                                                <p class="text">نام کاربر را برای جستجو وارد نمائید</p>
+                                                <input type="text" style="width: 100%" class="PR-text-input" id="ProductSearch" autocomplete="off" required/>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="PR-buttons mt-3">
+                                                    <button type="button" onclick="PR_Search()" id="PR-submit" >جستجو</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="User-Table">
+                                <legend style="width: 150px"> <center>لیست کاربران</center> </legend>
+
+                                <!--Start Table-->
+                                <div class="container">
+                                    <div class="table-wrapper">
+
+                                        <table class="table table-striped table-hover text-right" id="UserTBL">
+                                            <thead>
+                                            <tr>
+                                                <th style="display: none ;">کد</th>
+                                                <th>ردیف</th>
+                                                <th>نام</th>
+                                                <th>تلفن</th>
+                                                <th>ایمیل</th>
+                                                <th>یوزرنیم</th>
+                                                <th>پسورد</th>
+                                                <th>نشانی</th>
+                                                <th>سمت</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="ProductList text-right" id="ProductListdata">
+                                            </tbody>
+                                        </table>
+                                        <div class="clearfix">
+                                            <ul class="pagination" id="pagination-product">
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End Table-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <footer class="Footer">
+            <p>طراحی و توسعه توسط پویا پژوهنده ©</p>
+        </footer>
+    </div>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/swl.js"></script>
+    <script src="assets/js/panel.js"></script>
+
+    <script>
+        $(document).ready(function ()
+        {
+            loadProduct();
+            loadUsers();
+
+            $.ajax({
+                type: "GET",
+                url: "includes/api/products/Pagination.php",
+                async: "true",
+                success: function (Result)
+                {
+                    for(var i=1;i<=Result;i++)
+                    {
+                        $("#pagination-product").append('<li ><button onclick="loadProduct('+i+')" class="btn btn-warning" style="margin-left: 5px;width: 50px">'+i+'</button></li>');
+                    }
+                }
+            });
+        })
+    </script>
+
+</body>
+</html> 
